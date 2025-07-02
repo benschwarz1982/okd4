@@ -1,0 +1,24 @@
+$TTL    604800
+@       IN      SOA     ns.zkb.dev. admin.okd4.zkb.dev. (
+                  7     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Negative Cache TTL
+)
+
+; name servers - NS records
+@    IN      NS      ns.zkb.dev.
+
+; name servers - PTR records
+210    IN    PTR    okd4-services.okd4.zkb.dev.
+
+; OpenShift Container Platform Cluster - PTR records
+200    IN    PTR    okd4-bootstrap.okd4.zkb.dev.
+201    IN    PTR    okd4-control-plane-1.okd4.zkb.dev.
+202    IN    PTR    okd4-control-plane-2.okd4.zkb.dev.
+203    IN    PTR    okd4-control-plane-3.okd4.zkb.dev.
+204    IN    PTR    okd4-compute-1.okd4.zkb.dev.
+205    IN    PTR    okd4-compute-2.okd4.zkb.dev.
+210    IN    PTR    api.okd4.zkb.dev.
+210    IN    PTR    api-int.okd4.zkb.dev.

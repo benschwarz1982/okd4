@@ -1,0 +1,30 @@
+apiVersion: v1
+baseDomain: zkb.dev
+metadata:
+  name: okd4
+
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 0
+
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14 
+    hostPrefix: 23 
+  networkType: OVNKubernetes
+  serviceNetwork: 
+  - 172.30.0.0/16
+
+platform:
+  none: {}
+
+fips: false
+
+pullSecret: '{"auths":{"fake":{"auth": "aWQ6cGFzcwo="}}}' 
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDo9CnsSmaeJ+bDvpQEGYAIjLxlXbwpghzsonyh4r8dqwjOZ62RiSy/+cJOoSMKC6DiXkc0I1d+JGDKKsgX0xk/O7aupgy75zRvjBpEkymwVyeHf00R8hhAS4LFGFkGJ2fy3NKHkjq/h2D8ux5yJD5kFMBiZqMprM/7imZK6HrDk4sETO8dFUGnhEyH5xwnVand2nXFnAbeXYus03A22fy8YE47tF/eT9oxlbi+uFZtI+0/2hxvw0j87kuenTAflw1jUB1MNp0oKQFYUGkKOEv+ksys72gp/S/wlJfrG4VOcRiA1m1JZ+UfJVV4lt+Xj/cIrl/oEcLqLYZbibXn6e+u2aNpQ0tiMScDf6EV99zVGULC9jRJ1Oj10fRVm+F6t2UqlwjdqVsynQ6X7G3N+4059d1XkRGIr8TIGM3RsT5vzGFzNWWR+IjMMxD/+EXEfeMh0+/jnHvXWWm2BXgx3p4mR2OuBnexLKro9EWbPhZ34zTQsIwyyy01YslzU4I8+fU= centos@okd4-services'   
