@@ -1,6 +1,6 @@
 $TTL    604800
 @       IN      SOA     ns.zkb.dev. admin.okd4.zkb.dev. (
-                 11     ; Serial
+                 12     ; Serial
              604800     ; Refresh
               86400     ; Retry
             2419200     ; Expire
@@ -21,7 +21,8 @@ okd4-control-plane-3.okd4.zkb.dev.         IN      A      192.168.1.203
 okd4-compute-1.okd4.zkb.dev.        IN      A      192.168.1.204
 okd4-compute-2.okd4.zkb.dev.        IN      A      192.168.1.205
 okd4-services.okd4.zkb.dev.	    IN	    A	   192.168.1.210
-okd4-pfsense.okd4.zkb.dev.	    IN	    A	   213.167.226.174
+;okd4-pfsense.okd4.zkb.dev.	    IN	    A	   213.167.226.174
+okd4-opensense.okd4.zkb.dev.		IN	A	213.167.226.174
 
 ; OpenShift internal cluster IPs - A records
 api.okd4.zkb.dev.    IN    A    192.168.1.210
@@ -37,7 +38,3 @@ oauth-openshift.apps.okd4.zkb.dev.     IN     A     192.168.1.210
 _etcd-server-ssl._tcp.okd4.zkb.dev.    86400     IN    SRV     0    10    2380    etcd-0.okd4.zkb.dev.
 _etcd-server-ssl._tcp.okd4.zkb.dev.    86400     IN    SRV     0    10    2380    etcd-1.okd4.zkb.dev.
 _etcd-server-ssl._tcp.okd4.zkb.dev.    86400     IN    SRV     0    10    2380    etcd-2.okd4.zkb.dev.
-
-; Dodos und Bens Freakshow
-
-_acme-challenge.okd4-pfsense.okd4.zkb.dev.	300	IN	TXT	"Nw3XRP-aUxBnCkpSIoyNjiAmeYeXdE6fzbRsb_njYE0"
